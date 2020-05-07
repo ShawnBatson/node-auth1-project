@@ -42,6 +42,7 @@ router.post("/login", (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
+    console.log("logout", req.session);
     if (req.session) {
         req.session.destroy((error) => {
             if (error) {
@@ -56,4 +57,5 @@ router.get("/logout", (req, res) => {
         res.status(200).json({ message: "You weren't logged in" });
     }
 });
+
 module.exports = router;
