@@ -14,7 +14,7 @@ async function add(user) {
     return findById(id);
 }
 
-function finById(id) {
+function findById(id) {
     return db("users")
         .select("id", "username", "password")
         .where({ id })
